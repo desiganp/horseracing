@@ -22,10 +22,17 @@ root = tree.getroot()
 
 from bs4 import BeautifulSoup
 
-url = 'http://news.tabonline.co.za/Full-Results/2017-Full-Results?fname=VAAL@31.01.2017.xml'
-page = urllib.request.urlopen(url)
+offline = True
 
-soup = BeautifulSoup(page,"lxml")
+if(offline):
+    h = open('tab.xml',"r")
+    soup = BeautifulSoup(h,"lxml")
+    
+else:
+    url = 'http://news.tabonline.co.za/Full-Results/2017-Full-Results?fname=VAAL@31.01.2017.xml'
+    page = urllib.request.urlopen(url)
+    soup = BeautifulSoup(page,"lxml")
+    
 races = soup.find_all("td", class_="TABLEHEADER")
 winners = soup.find_all("td", class_="TableHeadWinner")
 
