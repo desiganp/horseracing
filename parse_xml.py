@@ -72,6 +72,7 @@ def parse_xml(url):
         
         if(t.get_text()=='SCRATCHED') : 
             #print(t.get_text())
+            #print(No)
             del No[len(No)-1]
             del Horse[len(Horse)-1]
             del Jockey[len(Jockey)-1]
