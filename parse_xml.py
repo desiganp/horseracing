@@ -129,7 +129,7 @@ def parse_xml(url):
                     date.append(race_date)
                     count = 0
                     
-            if("Prev" in t.get_text()): 
+            if(t.get_text() == "Prev"): 
                 #print(t.get_text())
                 start_race_info = True
                 count = 0
