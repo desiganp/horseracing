@@ -20,7 +20,7 @@ def train_horse(horse_name):
     
     if len(df) < 5:
         print('Less than 5 samples - cannot train model')
-        return -1,-1,len(df)
+        return -1,df,len(df),'Nan','Nan'
     else:
         print('Proceeding to train with ',len(df),'samples')
     
