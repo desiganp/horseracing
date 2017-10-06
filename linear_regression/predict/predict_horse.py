@@ -24,11 +24,11 @@ def predict_horse(horse_name,race_stakes,race_dist,horse_kg,horse_draw,race_trac
         name,lm,nsamples,df,abs_error,ms_error = joblib.load(dirname+filename)
     except:
         print('No prediction available for :',horse_name)   
-        return -1
+        return 999
     
     if lm == -1:
         print('No prediction available for :',horse_name)   
-        return -1
+        return 999
     
     # build up numpy array by cycling through the columns
     l_pred = []
