@@ -17,18 +17,8 @@ def parse_race(race_url,offline=False):
         soup = BeautifulSoup(h,"lxml")
         
     else:
-        if(use_proxy):
-            # set up authentication info
-            authinfo = urllib.request.HTTPBasicAuthHandler()
-            proxy_support = urllib.request.ProxyHandler({"http" : "http://padd:Moonbeam76@proxy.kentron.co.za:80"})
-            # build a new opener that adds authentication and caching FTP handlers
-            opener = urllib.request.build_opener(proxy_support, authinfo,
-                                         urllib.request.CacheFTPHandler)
-    
-            # install it
-            urllib.request.install_opener(opener) 
-            page = urllib.request.urlopen(race_url)
-            soup = BeautifulSoup(page,"lxml")
+        page = urllib.request.urlopen(race_url)
+        soup = BeautifulSoup(page,"lxml")
     
     #url = 'http://news.tabonline.co.za/Full-Results/2017-Full-Results?fname=VAAL@31.01.2017.xml'
     #h = open(race_url,"r")
