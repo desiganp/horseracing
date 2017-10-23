@@ -106,9 +106,9 @@ while (race_id < 1 or race_id > i+1):
         print('invalid selection')
         sys.exit()
         
-print(l_race_links[int(event_id)-1])
+print(l_race_links[int(race_id)-1])
 
-race_url = l_race_links[int(event_id)-1]
+race_url = l_race_links[int(race_id)-1]
 print('--------------')
 print('Field...')
 print('Number - Horse - Jockey - Trainer - Kg - Draw')
