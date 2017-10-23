@@ -53,6 +53,7 @@ def parse_race(race_url,offline=False):
         #print(weight.get_text().split('kg')[0].split('            ')[1])
         #l_weights.append(int(weight.get_text().split('kg')[0].split('            ')[1]))
         l_weights.append(int(weight.get_text().split('kg')[0].strip()))
+        l_weights.append(float(weight.get_text().split('kg')[0].strip().replace(',','.')))
     #print('draws')    
     for draw in draws:
         #print(draw.get_text())
